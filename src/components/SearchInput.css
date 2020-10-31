@@ -1,0 +1,29 @@
+.inputBox {
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    height: 30px;
+    width: 20vw;
+    border-color: lightgray;
+    border-radius: 5px;
+}
+
+.search-button {
+    height: 36px;
+    width: 40px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background-color: #FFCC00;
+}
+
+.search-button:hover {
+    color: lightgray;
+}
+
+input[type="text"]::placeholder {  
+    padding-left: 10px; 
+} 

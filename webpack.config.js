@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
@@ -36,7 +37,7 @@ module.exports = {
             name: '[name].[ext]',
             outputPath: 'image/'
         }
-    }
+    },
     ]
   },
   plugins: [
@@ -45,6 +46,11 @@ module.exports = {
     new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './index.html'
-    })
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/image', to: 'image' }
+      ],
+    }),
   ]
 };

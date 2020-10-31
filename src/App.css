@@ -1,0 +1,15 @@
+
+  .loading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .error {
+      padding: 2rem;
+  }
+
+  .error-image {
+      padding: 2rem;
+      width: 150px;
+  }
