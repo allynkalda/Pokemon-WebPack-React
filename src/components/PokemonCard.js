@@ -1,14 +1,18 @@
 import React from 'react';
+import { useHistory } from "react-router-dom";
+
 import './PokemonCard.css';
 
-export default function PokemonCard({ name, handleClick, showDetails, handleClickClose, details }) {
+export default function PokemonCard({ name, handleClick, details, showDetails, handleClickCloseDet }) {
+
+    const history = useHistory();
 
     const showAbilities = () => {
-        if (details.abilities) return details.abilities.map(ability => <li className="details">{ability.ability.name}</li>)
+        if (details.abilities) return details.abilities.map(ability => <li key={ability.ability.name} className="details">{ability.ability.name}</li>)
     };
     const showTextDetails = () => {
 
-        if (showDetails) {
+        if (details) {
             return (
                 <>
                     <p className="details">ID: {details.id}</p>
@@ -21,17 +25,22 @@ export default function PokemonCard({ name, handleClick, showDetails, handleClic
             )
         }
     }
+
+    const handleClickClose = () => {
+        history.push('/')
+    }
+
     return (
         <div className="container">
             <div>
-                {showDetails && (
+                {details && (
                     <div className="button-box">
-                        <button className="close" onClick={handleClickClose}>
+                        <button className="close" onClick={showDetails ? handleClickCloseDet : handleClickClose}>
                             <img src="../image/close.png"/>
                         </button>
                     </div>
                 )}
-                <div className={showDetails ? "box-details" : "box" }onClick={() => handleClick(name)}>
+                <div className={details ? "box-details" : "box" }onClick={() => handleClick(name)}>
                     <img src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${name}.gif`} />
                     <p className="name">{name}</p>
                     {showTextDetails()}

@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 import PokemonCard from './PokemonCard'
+import { useHistory } from "react-router-dom";
 
 import './GridView.css';
 
-export default function GridView({ pokemons, handleClick, details, showDetails, setShowDetails }) {
+export default function GridView({ pokemons, details, showDetails, setShowDetails }) {
 
-    const handleClickClose = () => {
+    const history = useHistory();
+    const handleClickCloseDet = () => {
         setShowDetails(false);
     }
+
+    const handleClick = (name) => {
+        history.push(`/pokemon/${name}`);
+    };
 
     const showPokemons = () => {
         return pokemons.map(pokemon => <PokemonCard name={pokemon.name} handleClick={handleClick} showDetails={showDetails}/>)
@@ -20,8 +26,7 @@ export default function GridView({ pokemons, handleClick, details, showDetails, 
                             details={details} 
                             handleClick={handleClick} 
                             showDetails={showDetails} 
-                            setShowDetails={setShowDetails}
-                            handleClickClose={handleClickClose}/>
+                            handleClickCloseDet={handleClickCloseDet}/>
             }
         } else {
             if (pokemons.length) {

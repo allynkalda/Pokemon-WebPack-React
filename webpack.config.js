@@ -16,7 +16,8 @@ module.exports = {
     contentBase: './dist',
     port: 3030,
     hot: true,
-    open: true
+    open: true,
+    historyApiFallback: true
   },
   module: {
     rules: [
