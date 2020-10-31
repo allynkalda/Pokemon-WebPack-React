@@ -16,7 +16,7 @@ export default function GridView({ pokemons, details, showDetails, setShowDetail
     };
 
     const showPokemons = () => {
-        return pokemons.map(pokemon => <PokemonCard name={pokemon.name} handleClick={handleClick} showDetails={showDetails}/>)
+        return pokemons.map(pokemon => <PokemonCard key={pokemon.name} name={pokemon.name} handleClick={handleClick} showDetails={showDetails}/>)
     }
 
     const togglePage = () => {
