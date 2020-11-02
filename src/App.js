@@ -1,14 +1,14 @@
 import React from 'react';
-import Home from './pages/Home'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect
 } from "react-router-dom";
+import Home from './pages/Home/Home'
+import Detail from './pages/Details/Detail';
 
 import './App.css';
-import Detail from './pages/Detail';
 
 function App() {
   

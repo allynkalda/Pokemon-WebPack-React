@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import PokemonCard from './PokemonCard'
+import React from 'react';
+import PokemonCard from '../PokemonCard/PokemonCard'
 import { useHistory } from "react-router-dom";
 
 import './GridView.css';

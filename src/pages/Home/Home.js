@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { getPokemons, getDetails } from '../api/api';
-import GridView from '../components/GridView';
-import Header from '../components/Header';
-import SearchInput from '../components/SearchInput';
+import { getPokemons, getDetails } from '../../api/api';
+import GridView from '../../components/GridView/GridView';
+import Header from '../../components/Header/Header';
+import SearchInput from '../../components/SearchInput/SearchInput';
 import ReactLoading from 'react-loading';
 
 import './Home.css';

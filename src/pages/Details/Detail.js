@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import PokemonCard from '../components/PokemonCard';
+import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import {
     useParams
   } from "react-router-dom";
-import { getDetails } from '../api/api'
+import { getDetails } from '../../api/api'
 
 import './Details.css';
 
